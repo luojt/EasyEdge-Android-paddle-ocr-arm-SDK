@@ -1,0 +1,6 @@
+# Project exclude paths
+/.gradle/
+/app/build/
+/app/build/intermediates/javac/debug/classes/
+/camera_ui/build/
+/camera_ui/build/intermediates/javac/debug/classes/

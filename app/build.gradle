@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.baidu.ai.edge.demo"
+    compileSdk 31
+    defaultConfig {
+        applicationId "com.baidu.ai.easyaimobile.demo" // 替换为您的包名
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a' // 只提供2个架构，和你自己的架构合并
+        }
+    }
+    buildTypes {
+        debug {
+            packagingOptions {
+                doNotStrip '**/*.so' // 避免so资源文件编译提示，可忽略
+            }
+        }
+        release {
+            packagingOptions {
+                doNotStrip '**/*.so' // 避免so资源文件编译提示，可忽略
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    // implementation 'com.iqiyi.xcrash:xcrash-android-lib:2.4.5' // 可以保存崩溃信息
+    implementation project(':camera_ui')
+    implementation files('libs/easyedge-sdk.jar')
+}

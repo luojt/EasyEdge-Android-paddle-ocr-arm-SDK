@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="list_result_view_item_style">
+        <item name="android:textColor">@color/table_result_item_text_color</item>
+        <item name="android:textSize">@dimen/result_list_view_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">30px</item>
+    </style>
+
+    <style name="list_result_popview_item_style">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">@dimen/result_list_popview_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">15px</item>
+        <item name="android:background">@color/result_popview_tablebody_bk</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:alpha">0.5</item>
+    </style>
+
+    <style name="list_result_view_tablehead_style">
+        <item name="android:textColor">@color/table_result_item_text_color</item>
+        <item name="android:textSize">@dimen/result_list_view_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">15px</item>
+    </style>
+
+    <style name="list_result_popview_tablehead_style">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">@dimen/result_list_popview_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">20px</item>
+    </style>
+
+    <style name="action_btn">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:background">@color/bk_black</item>
+    </style>
+
+    <style name="action_btn_selected">
+        <item name="android:textColor">@color/textColorHighlight</item>
+        <item name="android:background">@color/bk_black</item>
+    </style>
+
+
+</resources>

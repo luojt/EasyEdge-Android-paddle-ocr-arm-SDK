@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <com.baidu.ai.edge.ui.layout.ActionBarLayout
+            android:id="@+id/action_bar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back_in_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:cropToPadding="true"
+                android:paddingLeft="40px"
+                android:paddingRight="60px"
+                android:paddingTop="60px"
+                android:paddingBottom="40px"
+                android:src="@drawable/back_btn" />
+
+            <TextView
+                android:id="@+id/model_name"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/action_btn_text_size"
+                android:layout_marginTop="50px" />
+        </com.baidu.ai.edge.ui.layout.ActionBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="700px">
+
+            <ImageView
+                android:id="@+id/result_image"
+                android:layout_width="match_parent"
+                android:background="@color/bk_result_image_padding"
+                android:layout_height="match_parent" />
+
+            <com.baidu.ai.edge.ui.view.ResultMaskView
+                android:id="@+id/result_mask"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="56px"
+            android:textColor="@color/bk_black"
+            android:text="@string/result_label"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="26px"
+            android:layout_marginBottom="20px" />
+
+        <LinearLayout
+            android:id="@+id/result_seekbar_section"
+            android:layout_width="match_parent"
+            android:layout_height="130px"
+            android:layout_marginRight="@dimen/result_list_padding_lr"
+            android:layout_marginLeft="@dimen/result_list_padding_lr"
+            android:background="@drawable/result_page_border_section_bk"
+            android:layout_marginBottom="@dimen/result_list_gap_width">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30px"
+                android:text="@string/result_table_header_confidence"
+                android:layout_weight="2"
+                android:textSize="@dimen/result_list_view_text_size"
+                android:textColor="@color/table_result_tableheader_text_color"
+                android:layout_gravity="center_vertical" />
+
+            <SeekBar
+                android:id="@+id/confidence_seekbar"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:maxHeight="8px"
+                android:layout_gravity="center_vertical"
+                android:focusable="false"
+                android:thumb="@drawable/seekbar_handle"
+                android:progressDrawable="@drawable/seekbar_progress_result"
+                android:splitTrack="false" />
+
+            <TextView
+                android:id="@+id/seekbar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/result_list_view_text_size"
+                android:paddingRight="30px"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/result_page_border_section_bk"
+            android:layout_marginLeft="@dimen/result_list_padding_lr"
+            android:layout_marginRight="@dimen/result_list_padding_lr"
+            android:layout_marginBottom="@dimen/result_list_gap_width">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/list_result_view_tablehead_style"
+                android:textColor="@color/table_result_tableheader_text_color"
+                android:text="@string/result_table_header_index" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/list_result_view_tablehead_style"
+                android:textColor="@color/table_result_tableheader_text_color"
+                android:text="@string/result_table_header_name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:gravity="right"
+                style="@style/list_result_view_tablehead_style"
+                android:textColor="@color/table_result_tableheader_text_color"
+                android:text="@string/result_table_header_confidence" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/result_list_padding_lr"
+                android:paddingRight="@dimen/result_list_padding_lr"
+                android:layout_marginBottom="15px">
+
+                <com.baidu.ai.edge.ui.view.ResultListView
+                    android:id="@+id/result_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="700px"
+                    android:dividerHeight="@dimen/result_list_gap_width"
+                    android:divider="#FFFFFF"></com.baidu.ai.edge.ui.view.ResultListView>
+            </ScrollView>
+
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

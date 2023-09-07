@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="list_result_view_tablehead_style">
+        <item name="android:textColor">@color/table_result_item_text_color</item>
+        <item name="android:textSize">@dimen/result_list_view_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left</item>
+        <item name="android:padding">30px</item>
+        <item name="android:letterSpacing">0.3</item>
+    </style>
+</resources>
